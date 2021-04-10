@@ -62,7 +62,7 @@ even **PM2**.
 In My case I opt for [PM2][9] with the **--cron** flag:
 
 ```sh
-$ pm2 start index.js --cron "0 5 */10 * *"
+$ pm2 start index.js --cron "0 5 */10 * *" --no-autorestart
 $ pm2 save
 ```
 
