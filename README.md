@@ -69,8 +69,9 @@ $ pm2 save
 TODO
 ----
 
-There is no a retry system in case of failure. In my case this is no yet needed
+- There is no a retry system in case of failure. In my case this is no yet needed
 because I use a [Raspberry PI Zero W][10] which is very close to the pump.
+- There is no yet multiple simultaneous pump support.
 
 [1]: http://www.kamoer.com/Products/showproduct.php?id=575&lang=en
 [2]: https://www.theaquariumsolution.com/product/8194/319
