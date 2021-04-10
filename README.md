@@ -47,6 +47,13 @@ complains that sometimes the manual dosing is not well stop.
 You can pass to **start** method the volume in **ml** and also the calibration,
 or you can set them on the **config.js** file.
 
+You have to set the **MAC** address of your pump on the **config.js** file, run
+the following command to found your **MAC** address:
+
+```sh
+sudo hcitool lescan
+```
+
 Using cron
 ----------
 
@@ -59,6 +66,12 @@ $ pm2 start index.js --cron "0 5 */10 * *"
 $ pm2 save
 ```
 
+TODO
+----
+
+There is no a retry system in case of failure. In my case this is no yet needed
+because I use a [Raspberry PI Zero W][10] which is very close to the pump.
+
 [1]: http://www.kamoer.com/Products/showproduct.php?id=575&lang=en
 [2]: https://www.theaquariumsolution.com/product/8194/319
 [3]: https://play.google.com/store/apps/details?id=com.kamoer.x1dosingpump&hl=en_US&gl=US
@@ -68,3 +81,4 @@ $ pm2 save
 [7]: https://lacklustre.net/
 [8]: http://manpages.ubuntu.com/manpages/hirsute/man1/gatttool.1.html
 [9]: https://pm2.keymetrics.io/
+[10]: https://www.raspberrypi.org/products/raspberry-pi-zero-w/
