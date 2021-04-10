@@ -8,7 +8,7 @@ class Pump {
     this.timeout = 0
   }
 
-  setVolume (manualVolume = volume, manualCalibration = calibration) {
+  setVolume (manualVolume, manualCalibration) {
     const volume = Math.floor((manualVolume / calibration) * 10)
     const buffer = [1, 6, 48, 51, ((volume >> 8) | 0), ((volume & 255) | 0)]
 
@@ -21,7 +21,7 @@ class Pump {
     return this.execute(`sleep ${this.timeout + 1}`)
   }
 
-  async start (manualVolume, manualCalibration) {
+  async start (manualVolume = volume, manualCalibration = calibration) {
     await this.setVolume(manualVolume, manualCalibration)
     return this.execute(this.getCommand([1, 5, 16, 2, 255, 0, 41, 58]))
   }
@@ -35,6 +35,7 @@ class Pump {
   }
 
   execute (command) {
+    console.log(command)
     return this.executePromise(command).catch(error => console.error(error) && error).then(stdout => stdout && console.log(stdout))
   }
 

@@ -1,5 +1,5 @@
 {
-  "name": "x1pump",
+  "name": "x1-p1-dosing-pump-script",
   "version": "1.0.0",
   "description": "Control the X1/P1 dosing pumps using nodejs",
   "main": "index.js",
