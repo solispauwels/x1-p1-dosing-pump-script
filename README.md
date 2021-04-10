@@ -51,7 +51,7 @@ You have to set the **MAC** address of your pump on the **config.js** file, run
 the following command to found your **MAC** address:
 
 ```sh
-sudo hcitool lescan
+$ sudo hcitool lescan
 ```
 
 Using cron
